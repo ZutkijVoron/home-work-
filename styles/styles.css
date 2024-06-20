@@ -1,6 +1,7 @@
 body {
 	background: #fff;
 	padding: 5px;
+	overflow-x: hidden;
 }
 
 * {
@@ -11,6 +12,7 @@ body {
 	box-sizing: border-box;
 	color: #000;
 	cursor: default;
+	/* border: 0.1px solid red; */
 }
 
 .link__button {
@@ -26,7 +28,7 @@ body {
 }
 
 ._wrapper {
-	max-width: 1440px;
+	max-width: 1174px;
 	margin: 0 auto;
 }
 
@@ -42,7 +44,7 @@ body {
 }
 
 .header-header-nav {
-	max-width: 47%;
+	max-width: 50%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -79,7 +81,7 @@ body {
 
 .header-main-article-header-h1 {
 	font-weight: 800;
-	font-size: 55px;
+	font-size: 60px;
 }
 
 .p {
@@ -96,7 +98,6 @@ body {
 }
 
 .button {
-	margin-top: 50px;
 	display: flex;
 	align-items: center;
 	gap: 10px;
@@ -105,7 +106,7 @@ body {
 	background: #f25822;
 	border-radius: 56px;
 	font-weight: 600;
-	font-size: 20px;
+	font-size: 16px;
 	line-height: 27px;
 	cursor: pointer;
 	transition: 0.5s;
@@ -121,7 +122,6 @@ body {
 }
 
 .button.reverse {
-	margin-top: 50px;
 	display: flex;
 	align-items: center;
 	gap: 10px;
@@ -130,7 +130,7 @@ body {
 	background: #ffffff;
 	border-radius: 56px;
 	font-weight: 600;
-	font-size: 20px;
+	font-size: 16px;
 	line-height: 27px;
 	cursor: pointer;
 	transition: 0.5s;
@@ -161,7 +161,6 @@ body {
 .main-lorem-ipsum {
 	display: flex;
 	justify-content: space-between;
-	padding-top: 150px;
 	position: relative;
 }
 
@@ -187,16 +186,17 @@ body {
 .h2 {
 	font-weight: 700;
 	font-size: 48px;
+	font-size: 27px;
 	line-height: 120%;
 }
 
 .main-cards {
-	padding-top: 150px;
-	padding-bottom: 150px;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 30px;
+	padding: 100px 0;
+	flex-wrap: wrap;
+	justify-content: center;
+	display: flex;
 	align-items: center;
+	gap: 61px;
 }
 
 .main-cards-mini-card {
@@ -204,13 +204,12 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	max-width: 320px;
 	gap: 25px;
-	background: #ffffff;
-	box-shadow: 15px 25px 56px 6px rgba(0, 0, 0, 0.06);
 }
 
 .main-cards-big-card {
-	max-width: max-content;
+	max-width: 380px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -220,30 +219,36 @@ body {
 	padding: 40px 34px;
 }
 
+.main-cards-card-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 18px;
+}
+
 .main-cards-card-img {
-	align-self: center;
+	align-self: flex-start;
 	justify-self: center;
-	margin: 30px;
 }
 
 .main-cards-card-h2 {
 	font-weight: 700;
-	font-size: 25px;
-	text-align: center;
+	font-size: 24px;
+	text-align: start;
 	opacity: 0.7;
 	line-height: 31px;
 }
 
 .main-cards-card-p {
 	font-weight: 600;
-	font-size: 16px;
-	text-align: center;
+	font-size: 14px;
+	text-align: start;
 	opacity: 0.7;
 	line-height: 29px;
-	margin: 30px;
 }
 
 .main-proposals {
+	padding: 100px 0;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -269,10 +274,56 @@ body {
 .main-proposals-article {
 	max-width: 548px;
 	max-height: max-content;
+	> .h2 {
+		text-align: center;
+	}
+	> .p {
+		text-align: center;
+	}
 }
 
-/* .main-proposals-cards {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 30px;
-} */
+.main-proposals-cards {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	/* Тут так сделано из-за того что отступ при увеличении экрана съезжал(gap) */
+	gap: 10px;
+	> * {
+		font-family: 'Inter';
+		text-align: center;
+	}
+}
+
+.main-proposals-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0px 34px 34px;
+	max-width: 378px;
+	gap: 32px;
+	background: #ffffff;
+	box-shadow: 15px 25px 56px 6px rgba(0, 0, 0, 0.06);
+}
+
+.main-proposals-card-text {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.main-proposals-card-h3 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 29px;
+}
+
+.main-proposals-card-p {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+	color: #666666;
+}
